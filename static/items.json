@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "image": "https://raw.githubusercontent.com/AlexandrLo/vue-test-task/master/.github/images/cake.jpg",
+    "name": "Наименование товара",
+    "description": "Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк",
+    "price": 10000
+  },
+  {
+    "id": 2,
+    "image": "https://raw.githubusercontent.com/AlexandrLo/vue-test-task/master/.github/images/cake.jpg",
+    "name": "Наименование товара",
+    "description": "Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк",
+    "price": 10000
+  },
+  {
+    "id": 3,
+    "image": "https://raw.githubusercontent.com/AlexandrLo/vue-test-task/master/.github/images/cake.jpg",
+    "name": "Наименование товара",
+    "description": "Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк",
+    "price": 10000
+  },
+  {
+    "id": 4,
+    "image": "https://raw.githubusercontent.com/AlexandrLo/vue-test-task/master/.github/images/cake.jpg",
+    "name": "Наименование товара",
+    "description": "Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк",
+    "price": 10000
+  },
+  {
+    "id": 5,
+    "image": "https://raw.githubusercontent.com/AlexandrLo/vue-test-task/master/.github/images/cake.jpg",
+    "name": "Наименование товара",
+    "description": "Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк",
+    "price": 10000
+  },
+  {
+    "id": 6,
+    "image": "https://raw.githubusercontent.com/AlexandrLo/vue-test-task/master/.github/images/cake.jpg",
+    "name": "Наименование товара",
+    "description": "Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк",
+    "price": 10000
+  }
+]
