@@ -33,8 +33,8 @@
       this.items = items;
     },
     methods: {
-      createItem(e) {
-        this.items.push(e);
+      createItem(item) {
+        this.items.push(item);
       },
     },
   };
