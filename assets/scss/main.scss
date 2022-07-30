@@ -1,7 +1,9 @@
-@import url("./variables.scss");
-@import url("./reset.scss");
+@import "./variables";
+@import "./reset";
 
-@import url("./typography.scss");
+@import "./typography";
+@import "./form";
+@import "./transitions.scss";
 
 body {
   font-family: "Source Sans Pro", sans-serif;

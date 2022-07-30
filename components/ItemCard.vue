@@ -8,7 +8,14 @@
       <p class="description">
         {{ description }}
       </p>
-      <p class="price">{{ price }} руб.</p>
+      <p class="price">
+        {{
+          new Intl.NumberFormat("ru-RU", {
+            style: "decimal",
+          }).format(price)
+        }}
+        руб.
+      </p>
     </div>
     <button class="delete-button">
       <img src="@/assets/svg/delete.svg" alt="Удалить товар" />
