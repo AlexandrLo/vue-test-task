@@ -1,0 +1,10 @@
+.list-enter-active,
+.list-leave-active {
+  transition: 500ms ease;
+  transition-property: opacity, transform;
+}
+.list-enter,
+.list-leave-to {
+  opacity: 0;
+  transform: translateY(2rem);
+}

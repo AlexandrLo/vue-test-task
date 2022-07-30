@@ -1,1 +1,12 @@
-@import url("./reset.scss");
+@import "./variables";
+@import "./reset";
+
+@import "./typography";
+@import "./form";
+@import "./transitions.scss";
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  background-color: $white;
+  color: $black;
+}
