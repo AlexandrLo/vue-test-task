@@ -1,59 +1,108 @@
 <template>
   <div class="card">
-    <form>
-      <FormGroup>
-        <StyledInput
+    <form @submit.prevent="createItem">
+      <div class="form-group">
+        <p v-if="errors.name" class="error">{{ errors.name }}</p>
+        <input
           id="new-item-name"
+          v-model="name"
+          :class="errors.name ? 'invalid' : ''"
           type="text"
           placeholder="Введите наименование товара"
           required
         />
-        <StyledLabel for="new-item-name">Наименование товара</StyledLabel>
-      </FormGroup>
+        <label for="new-item-name">Наименование товара</label>
+      </div>
 
-      <FormGroup>
-        <StyledTextArea
+      <div class="form-group">
+        <textarea
           id="new-item-description"
+          v-model="description"
           placeholder="Введите описание товара"
           rows="5"
         />
-        <StyledLabel for="new-item-description">Описание товара</StyledLabel>
-      </FormGroup>
+        <label for="new-item-description">Описание товара</label>
+      </div>
 
-      <FormGroup>
-        <StyledInput
+      <div class="form-group">
+        <p v-if="errors.image" class="error">{{ errors.image }}</p>
+        <input
           id="new-item-image"
+          v-model="image"
+          :class="errors.image ? 'invalid' : ''"
           type="text"
           placeholder="Введите ссылку на изображение товара"
           required
         />
-        <StyledLabel for="new-item-image">
-          Ссылка на изображение товара
-        </StyledLabel>
-      </FormGroup>
+        <label for="new-item-image"> Ссылка на изображение товара </label>
+      </div>
 
-      <FormGroup>
-        <StyledInput
+      <div class="form-group">
+        <p v-if="errors.price" class="error">{{ errors.price }}</p>
+        <input
           id="new-item-price"
-          type="text"
+          v-model="price"
+          :class="errors.price ? 'invalid' : ''"
+          type="number"
           placeholder="Введите цену товара"
           required
         />
-        <StyledLabel for="new-item-price">Цена товара</StyledLabel>
-      </FormGroup>
+        <label for="new-item-price">Цена товара</label>
+      </div>
 
-      <StyledInput type="submit" value="Добавить товар" />
+      <input ref="submit" type="submit" value="Добавить товар" disabled />
     </form>
   </div>
 </template>
 
 <script>
-  import StyledInput from "./StyledInput.vue";
-  import StyledLabel from "./StyledLabel.vue";
-  import FormGroup from "./FormGroup.vue";
-  import StyledTextArea from "./StyledTextArea.vue";
   export default {
-    components: { StyledInput, StyledLabel, FormGroup, StyledTextArea },
+    data() {
+      return {
+        errors: {},
+        name: "",
+        description: "",
+        image: "",
+        price: null,
+      };
+    },
+    computed: {
+      newItem() {
+        return {
+          name: this.name,
+          description: this.description,
+          image: this.image,
+          price: +this.price,
+        };
+      },
+    },
+    watch: {
+      newItem() {
+        this.validate();
+      },
+    },
+    methods: {
+      validate() {
+        this.errors = {};
+        if (!this.newItem.name) {
+          this.errors.name = "Поле является обязательным";
+        }
+        if (!this.newItem.image) {
+          this.errors.image = "Поле является обязательным";
+        }
+        if (!this.newItem.price) {
+          this.errors.price = "Поле является обязательным";
+        }
+        if (Object.keys(this.errors).length === 0) {
+          this.$refs.submit.disabled = false;
+        } else {
+          this.$refs.submit.disabled = true;
+        }
+      },
+      createItem(e) {
+        this.$emit("createItem", { id: this._uid, ...this.newItem });
+      },
+    },
   };
 </script>
 

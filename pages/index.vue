@@ -2,11 +2,11 @@
   <div class="container">
     <header class="header">
       <h1>Добавление товара</h1>
-      <StyledSelect />
+      <OptionSelect v-model="sort" :options="sortOptions" />
     </header>
     <main class="content">
       <div class="sidebar">
-        <CreateItemCard />
+        <CreateItemCard @createItem="createItem" />
       </div>
       <ItemList :items="items" />
     </main>
@@ -14,15 +14,28 @@
 </template>
 
 <script>
-  import StyledSelect from "@/components/StyledSelect.vue";
+  import OptionSelect from "@/components/OptionSelect.vue";
   import items from "@/static/items.json";
   export default {
     name: "IndexPage",
-    components: { StyledSelect },
+    components: { OptionSelect },
     data() {
       return {
-        items,
+        items: [],
+        sort: "default",
+        sortOptions: [
+          { value: "default", name: "По умолчанию" },
+          { value: "name", name: "По наименованию" },
+        ],
       };
+    },
+    mounted() {
+      this.items = items;
+    },
+    methods: {
+      createItem(e) {
+        this.items.push(e);
+      },
     },
   };
 </script>

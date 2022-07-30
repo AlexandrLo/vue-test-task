@@ -1,5 +1,5 @@
 <template>
-  <div class="items-grid">
+  <transition-group name="list" tag="div" class="items-grid">
     <ItemCard
       v-for="item in items"
       :key="item.id"
@@ -8,7 +8,7 @@
       :description="item.description"
       :price="item.price"
     />
-  </div>
+  </transition-group>
 </template>
 
 <script>
