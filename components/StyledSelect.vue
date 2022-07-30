@@ -1,33 +1,51 @@
 <template>
-  <select>
-    <option>По умолчанию</option>
-  </select>
+  <div class="select-wrapper">
+    <select>
+      <option>По умолчанию</option>
+    </select>
+    <div class="chevron-wrapper">
+      <img src="@/assets/svg/chevron-down.svg" />
+    </div>
+  </div>
 </template>
 
-<script>
-  export default {};
-</script>
-
 <style lang="scss" scoped>
-  select {
-    height: 2.25rem;
-    outline: none;
-    border: none;
-    border-radius: 0.25rem;
-    border-right: 1rem solid transparent;
-    padding-left: 1rem;
-    box-shadow: $shadow-300;
-    background-color: $white;
-    color: $gray-500;
-    transition: $transition;
-    transition-property: transform, box-shadow;
-    &:hover {
-      transform: translateY(-0.25rem);
-      box-shadow: $shadow-400;
+  .select-wrapper {
+    position: relative;
+    & > .chevron-wrapper {
+      position: absolute;
+      right: 1rem;
+      color: $gray-500;
+      height: 100%;
+      right: 1rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
     }
-    &:active {
-      transform: translateY(-0.125rem);
+    & > select {
+      font-size: 0.75rem;
+      height: 2.25rem;
+      padding-left: 1rem;
+      padding-right: 1.75rem;
+      border: 2px solid transparent;
+      border-radius: 0.25rem;
+      background-color: $white;
+      color: $gray-500;
       box-shadow: $shadow-300;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      outline: none;
+      transition: $transition;
+      transition-property: transform, box-shadow;
+      &:hover {
+        border-color: $gray-400;
+      }
+      &:active,
+      &:focus {
+        border-color: $dark;
+      }
     }
   }
 </style>

@@ -23,7 +23,7 @@
       }
       &:active,
       &:focus {
-        border-color: $gray-500;
+        border-color: $dark;
       }
     }
     &[type="submit"] {

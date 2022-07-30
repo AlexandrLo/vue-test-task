@@ -72,6 +72,9 @@
       box-shadow: $shadow-300;
       transition: $transition;
       transition-property: transform, box-shadow, opacity;
+      &:focus {
+        opacity: 1;
+      }
     }
     &:hover > .delete-button {
       opacity: 1;
