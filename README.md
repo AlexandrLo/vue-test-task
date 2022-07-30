@@ -1,5 +1,5 @@
 # vue-test-task
-
+![Node version used](https://img.shields.io/badge/node-16.14.0-brightgreen)
 ## Build Setup
 
 ```bash
