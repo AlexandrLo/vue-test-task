@@ -1,24 +1,43 @@
 <template>
   <div class="card">
     <div class="image-wrapper">
-      <img
-        src="https://images.unsplash.com/photo-1542826438-bd32f43d626f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1592&q=80"
-        alt="Item image"
-      />
+      <img :src="image" alt="Изображение товара" />
     </div>
     <div class="body">
-      <div class="title">Наименование товара</div>
-      <div class="description">
-        Довольно-таки интересное описание товара в несколько строк.
-        Довольно-таки интересное описание товара в несколько строк
-      </div>
-      <div class="price">10 000 руб.</div>
+      <h3>{{ name }}</h3>
+      <p class="description">
+        {{ description }}
+      </p>
+      <p class="price">{{ price }} руб.</p>
     </div>
     <button class="delete-button">
-      <img src="@/assets/svg/delete.svg" />
+      <img src="@/assets/svg/delete.svg" alt="Удалить товар" />
     </button>
   </div>
 </template>
+
+<script>
+  export default {
+    props: {
+      image: {
+        type: String,
+        default: "",
+      },
+      name: {
+        type: String,
+        default: "Нет наименования товара",
+      },
+      description: {
+        type: String,
+        default: "Нет описания",
+      },
+      price: {
+        type: Number,
+        default: 0,
+      },
+    },
+  };
+</script>
 
 <style lang="scss" scoped>
   .card {
@@ -41,13 +60,7 @@
     .body {
       padding: 1rem;
     }
-    .title {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
     .description {
-      font-size: 1rem;
       margin-bottom: 2rem;
     }
     .price {

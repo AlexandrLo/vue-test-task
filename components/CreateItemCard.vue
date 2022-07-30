@@ -12,10 +12,10 @@
       </FormGroup>
 
       <FormGroup>
-        <StyledInput
+        <StyledTextArea
           id="new-item-description"
-          type="text"
           placeholder="Введите описание товара"
+          rows="5"
         />
         <StyledLabel for="new-item-description">Описание товара</StyledLabel>
       </FormGroup>
@@ -51,7 +51,10 @@
   import StyledInput from "./StyledInput.vue";
   import StyledLabel from "./StyledLabel.vue";
   import FormGroup from "./FormGroup.vue";
-  export default { components: { StyledInput, StyledLabel, FormGroup } };
+  import StyledTextArea from "./StyledTextArea.vue";
+  export default {
+    components: { StyledInput, StyledLabel, FormGroup, StyledTextArea },
+  };
 </script>
 
 <style lang="scss" scoped>
@@ -60,5 +63,9 @@
     background: $white;
     box-shadow: $shadow-500;
     padding: 1.5rem;
+    & > form {
+      display: flex;
+      flex-direction: column;
+    }
   }
 </style>

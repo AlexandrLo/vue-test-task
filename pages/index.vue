@@ -1,18 +1,15 @@
 <template>
   <div class="container">
-    <div class="header">
+    <header class="header">
       <h1>Добавление товара</h1>
       <StyledSelect />
-    </div>
-
-    <div class="content">
+    </header>
+    <main class="content">
       <div class="sidebar">
         <CreateItemCard />
       </div>
-      <div class="list">
-        <ItemList />
-      </div>
-    </div>
+      <ItemList :items="items" />
+    </main>
   </div>
 </template>
 
@@ -21,6 +18,60 @@
   export default {
     name: "IndexPage",
     components: { StyledSelect },
+    data() {
+      return {
+        items: [
+          {
+            id: 1,
+            image: "",
+            name: "Наименование товара",
+            description:
+              "Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк",
+            price: 10000,
+          },
+          {
+            id: 2,
+            image: "",
+            name: "Наименование товара",
+            description:
+              "Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк",
+            price: 10000,
+          },
+          {
+            id: 3,
+            image: "",
+            name: "Наименование товара",
+            description:
+              "Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк",
+            price: 10000,
+          },
+          {
+            id: 4,
+            image: "",
+            name: "Наименование товара",
+            description:
+              "Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк",
+            price: 10000,
+          },
+          {
+            id: 5,
+            image: "",
+            name: "Наименование товара",
+            description:
+              "Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк",
+            price: 10000,
+          },
+          {
+            id: 6,
+            image: "",
+            name: "Наименование товара",
+            description:
+              "Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк",
+            price: 10000,
+          },
+        ],
+      };
+    },
   };
 </script>
 
@@ -32,8 +83,8 @@
     align-items: flex-start;
     margin-bottom: 1rem;
     @media (min-width: $breakpoint-md) {
+      margin-bottom: 0;
       flex-direction: row;
-      align-items: center;
     }
   }
   .container {
@@ -46,14 +97,15 @@
     align-items: flex-start;
     flex-direction: column;
     & > .sidebar {
+      position: static;
       margin-bottom: 1rem;
       min-width: 100%;
-    }
-    & > .list {
     }
     @media (min-width: $breakpoint-md) {
       flex-direction: row;
       & > .sidebar {
+        position: sticky;
+        top: 1.5rem;
         margin-right: 1rem;
         min-width: 332px;
       }

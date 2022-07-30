@@ -4,7 +4,7 @@
       <option>По умолчанию</option>
     </select>
     <div class="chevron-wrapper">
-      <img src="@/assets/svg/chevron-down.svg" />
+      <img src="@/assets/svg/chevron-down.svg" alt="Стрелка" />
     </div>
   </div>
 </template>
